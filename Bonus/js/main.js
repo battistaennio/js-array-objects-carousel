@@ -156,3 +156,23 @@ previous.addEventListener("click",
         }
     }
 );
+
+//AUTOPLAY
+//Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
+setInterval(() => {
+
+    divItems[activeItem].classList.remove("active");
+    divTumbnail[brightTumbnail].classList.remove("bright");
+
+    activeItem++;
+    brightTumbnail++;
+
+    if (activeItem === images.length) {
+      activeItem = 0;
+      brightTumbnail = 0;
+    }
+
+    divItems[activeItem].classList.add("active");
+    divTumbnail[brightTumbnail].classList.add("bright")
+
+  }, 3000);

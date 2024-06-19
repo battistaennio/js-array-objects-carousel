@@ -9,6 +9,7 @@
     margin: 10% 15%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     height: 55vh;
 }
 
@@ -43,6 +44,7 @@
 .tumbnail{
     height: calc(100% / 5);
     filter: brightness(0.25);
+    transition: all 0.2s ease-in-out;
 }
 
 img{
@@ -84,5 +86,9 @@ img{
 .tumbnail.bright{
     filter: brightness(1);
     border: 1px solid white;
+}
+
+#autoplay{
+    width: 100%;
 }
 
