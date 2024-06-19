@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container generale */
+.container{
+    margin: 10% 15%;
+    display: flex;
+    justify-content: center;
+    height: 55vh;
+
+}
+
+/* immagini principali di JS*/
+.items-container{
+    height: 55vh;
+    width: 85%;
+    position: relative;
+}
+
+.item{
+    /* display: none; */
+    height: 100%;
+    width: 100%;
+}
+
+.item-txt{
+    text-align: right;
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* bottoni frecce up/down */
+.arrow{
+    font-size: 20px;
+    text-align: center;
+    line-height: 26px;
+    width: 25px;
+    height: 25px;
+    color: rgb(125, 125, 125);
+    background-color: lightgrey;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    cursor: pointer;
+}
+
+#arrow-up{
+    top: 10px;
+}
+
+#arrow-down{
+    bottom: 10px;
+}
+
+/* JS active/bright */
+.item.active{
+    display: block;
+}
+
+.box.bright{
+    filter: brightness(1);
+}
+
