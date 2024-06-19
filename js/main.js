@@ -42,11 +42,12 @@ const images = [
 //selettore container
 const itemsContainer = document.querySelector(".items-container");
 
+//per ogni ogetto dell'array creo un setup da utilizzare in html
 images.forEach((obj) => {
     let itemContent = `
             <div class="item">
                 <img src="${obj.image}">
-                
+
                 <div class="item-txt">
                     <h2>${obj.title}</h2>
                     <p>${obj.text}</p>
@@ -62,6 +63,70 @@ const divItems = document.getElementsByClassName("item");
 //asseganzione classe .active al primo elemento generato (default)
 let activeItem = 0;
 divItems[activeItem].classList.add("active");
+
+//selettore "bottone" arrow-down
+const next = document.getElementById("arrow-down");
+//selettore "bottone" arrow-up
+const previous = document.getElementById("arrow-up");
+
+//creazione evento su click di arrow-down
+next.addEventListener("click",
+    function () {
+
+        //condizione per verificare se siamo alla fine della lista
+        if (activeItem < images.length - 1){
+
+            //togliere .active alla foto precedente
+            divItems[activeItem].classList.remove("active");
+            
+            //incremento valore di activeItem/brightBox per passare alla foto successiva
+            activeItem++;
+
+            //aggiungere la classe active alla nuova immagine
+            divItems[activeItem].classList.add("active");
+
+        } else {  //altrimenti
+            //togliere .active alla foto precedente
+            divItems[activeItem].classList.remove("active");
+
+            //resetta activeItem alla prima foto in lista
+            activeItem = 0;
+
+            //aggiungere .active alla nuova immagine
+            divItems[activeItem].classList.add("active");
+        }
+    } 
+);
+
+//creazione evento su click di arrow-up
+previous.addEventListener("click",
+    function () {
+
+        //condizione per verificare se siamo all'inizio della lista
+        if (activeItem != 0){
+
+            //togliere .active alla foto precedente
+            divItems[activeItem].classList.remove("active");
+            
+            //incremento valore di activeItem per passare alla foto successiva
+            activeItem--;
+
+            //aggiungere la classe active anche alla nuova immagine
+            divItems[activeItem].classList.add("active");
+        } 
+        
+        else {  //altrimenti
+            //togliere .active alla foto precedente
+            divItems[activeItem].classList.remove("active");
+
+            //resetta activeItem all'ultima foto in lista
+            activeItem = images.length - 1;
+
+            //aggiungere .active alla nuova immagine
+            divItems[activeItem].classList.add("active");
+        }
+    }
+);
 
 
 
