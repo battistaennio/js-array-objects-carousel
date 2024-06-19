@@ -39,4 +39,31 @@ const images = [
     } 
 ];
 
+//selettore container
+const itemsContainer = document.querySelector(".items-container");
+
+images.forEach((obj) => {
+    let itemContent = `
+            <div class="item">
+                <img src="${obj.image}">
+                
+                <div class="item-txt">
+                    <h2>${obj.title}</h2>
+                    <p>${obj.text}</p>
+                </div>
+            </div>`
+    //inserimento div.item nel div.items-container
+    itemsContainer.innerHTML += itemContent;
+})
+
+//selettore elementi div.item
+const divItems = document.getElementsByClassName("item");
+
+//asseganzione classe .active al primo elemento generato (default)
+let activeItem = 0;
+divItems[activeItem].classList.add("active");
+
+
+
+
 
